@@ -22,11 +22,20 @@ namespace OCP\Lockdown;
 use OC\Authentication\Token\IToken;
 
 interface ILockdownManager {
+	/**
+	 * @since 9.2
+	 */
 	public function enable();
 
+	/**
+	 * @param IToken $token
+	 * @since 9.2
+	 */
 	public function setToken(IToken $token);
 
+	/**
+	 * @return bool
+	 * @since 9.2
+	 */
 	public function canAccessFilesystem();
-
-	public function canAccessApp($app);
 }
